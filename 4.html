@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Button Click Event Example</title>
+</head>
+<body>
+  <button id="btn1">Button 1</button>
+  <button id="btn2">Button 2</button>
+  <button id="btn3">Button 3</button>
+
+  <p id="output"></p>
+
+  <script>
+    // Select the buttons
+    const btn1 = document.getElementById('btn1');
+    const btn2 = document.getElementById('btn2');
+    const btn3 = document.getElementById('btn3');
+    const output = document.getElementById('output');
+
+    // Add click event listeners to each button
+    btn1.addEventListener('click', () => {
+      output.textContent = 'Button 1 was clicked!';
+    });
+
+    btn2.addEventListener('click', () => {
+      output.textContent = 'Button 2 was clicked!';
+    });
+
+    btn3.addEventListener('click', () => {
+      output.textContent = 'Button 3 was clicked!';
+    });
+  </script>
+</body>
+</html>
