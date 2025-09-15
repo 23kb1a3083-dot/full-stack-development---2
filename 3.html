@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Event Listeners Example</title>
+</head>
+<body>
+  <button id="clickBtn">Click Me</button>
+  <input type="text" id="inputBox" placeholder="Type something..." />
+  <div id="hoverDiv" style="width:200px; height:100px; background-color:lightgray; margin-top:10px;">
+    Hover over me!
+  </div>
+  <p id="output"></p>
+
+  <script>
+    // Select elements
+    const button = document.getElementById('clickBtn');
+    const input = document.getElementById('inputBox');
+    const hoverDiv = document.getElementById('hoverDiv');
+    const output = document.getElementById('output');
+
+    // Click event listener
+    button.addEventListener('click', () => {
+      output.textContent = "Button was clicked!";
+    });
+
+    // Input event listener (fires when input changes)
+    input.addEventListener('input', (event) => {
+      output.textContent = "You typed: " + event.target.value;
+    });
+
+    // Mouseover event listener
+    hoverDiv.addEventListener('mouseover', () => {
+      hoverDiv.style.backgroundColor = 'lightblue';
+      output.textContent = "Mouse is over the box!";
+    });
+
+    // Mouseout event listener
+    hoverDiv.addEventListener('mouseout', () => {
+      hoverDiv.style.backgroundColor = 'lightgray';
+      output.textContent = "";
+    });
+  </script>
+</body>
+</html>
