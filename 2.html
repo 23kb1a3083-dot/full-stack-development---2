@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Selector Example</title>
+</head>
+<body>
+  <h1 id="main-title">Hello World</h1>
+  <p class="intro">This is a paragraph with class "intro".</p>
+  <p class="intro">Another paragraph with class "intro".</p>
+  <div name="container">This is a div with a name attribute.</div>
+  <button>Click Me!</button>
+
+  <script>
+    // Select by ID
+    const title = document.getElementById('main-title');
+    console.log('By ID:', title);
+
+    // Select by class name (returns HTMLCollection)
+    const introParagraphs = document.getElementsByClassName('intro');
+    console.log('By Class Name:', introParagraphs);
+
+    // Select by tag name (returns HTMLCollection)
+    const buttons = document.getElementsByTagName('button');
+    console.log('By Tag Name:', buttons);
+
+    // Select by name attribute (returns NodeList)
+    const containerDivs = document.getElementsByName('container');
+    console.log('By Name Attribute:', containerDivs);
+
+    // Using querySelector (returns first matching element)
+    const firstIntro = document.querySelector('.intro');
+    console.log('querySelector (first .intro):', firstIntro);
+
+    // Using querySelectorAll (returns NodeList of all matching elements)
+    const allIntro = document.querySelectorAll('.intro');
+    console.log('querySelectorAll (.intro):', allIntro);
+
+    // Example: change text of selected elements
+    title.textContent = "Title changed via JavaScript!";
+    for (let p of introParagraphs) {
+      p.style.color = 'blue';
+    }
+  </script>
+</body>
+</html>
